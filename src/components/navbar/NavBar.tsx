@@ -9,12 +9,12 @@ function NavBar() {
 
             <div className='flex gap-4'>
                 
-              <div className='hover:underline'>Home</div>
-              <div className='hover:underline'>Produtos</div>
-              <div className='hover:underline'>Cadastrar</div>
+              <Link to="/home" className='hover:underline'>Home</Link>
+              <div className='hover:underline'>Categoria</div>
+              <Link to="/login" className='hover:underline'>Login</Link>
               <div className='hover:underline'>Perfil</div>
-              <div className='hover:underline'>Sobre</div>
               <div className='hover:underline'>Sair</div>
+              <Link to="/sobre" className='hover:underline'>Sobre</Link>
              
             </div>
           </div>
