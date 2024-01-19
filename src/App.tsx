@@ -1,10 +1,8 @@
-import './App.css';
-
-//import Navbar from '';
-//import Footer from '';
+import Navbar from './components/navbar/NavBar';
+import Footer from './components/footer/Footer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './paginas/login/Login';
-import Contato from './paginas/contato/Contato';
+import Sobre from './paginas/sobre/Sobre';
 import Home from './paginas/home/Home';
 
 
@@ -13,16 +11,16 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        {/* <Navbar /> */}
+        <Navbar />
         <div className='min-h-[80vh]'>
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/contato" element={<Contato />} />
+            <Route path="/sobre" element={<Sobre />} />
             <Route path="/home" element={<Home />} />
           </Routes>
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </BrowserRouter>
     </>
   );
