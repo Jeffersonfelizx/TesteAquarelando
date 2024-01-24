@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './paginas/login/Login';
 import Sobre from './paginas/sobre/Sobre';
 import Home from './paginas/home/Home';
-
+import Cadastro from './paginas/cadastro/Cadastro';
 
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
         <Navbar />
         <div className='min-h-[80vh]'>
           <Routes>
+            <Route path="/" element={<Cadastro />} />
             <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/sobre" element={<Sobre />} />
