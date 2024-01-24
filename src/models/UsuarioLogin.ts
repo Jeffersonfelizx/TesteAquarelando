@@ -4,7 +4,7 @@ export default interface UsuarioLogin {
     data_nascimento: string;
     cpf: string;
     foto: string;
-    email: string
+    email: string;
     senha: string;
     token: string;
   }
