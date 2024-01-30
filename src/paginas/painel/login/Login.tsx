@@ -3,8 +3,8 @@ import './Login.css';
 
 import { Link, useNavigate } from 'react-router-dom';
 
-import { AuthContext } from '../../contexts/AuthContext';
-import UsuarioLogin from '../../models/UsuarioLogin';
+import { AuthContext } from '../../../contexts/AuthContext';
+import UsuarioLogin from '../../../models/UsuarioLogin';
 import { RotatingLines } from 'react-loader-spinner';
 
 function Login() {
@@ -38,9 +38,9 @@ function login(e: ChangeEvent<HTMLFormElement>) {
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold ">
-        <form className="flex justify-center items-center flex-col w-1/2 gap-4" onSubmit={login}>
-          <h2 className="text-slate-900 text-5xl ">Entrar</h2>
+      <div className="grid h-screen grid-cols-1 font-bold lg:grid-cols-2 place-items-center ">
+        <form className="flex flex-col items-center justify-center w-1/2 gap-4" onSubmit={login}>
+          <h2 className="text-5xl text-slate-900 ">Entrar</h2>
           <div className="flex flex-col w-full">
             <label htmlFor="email">Email</label>
             <input
@@ -48,7 +48,7 @@ function login(e: ChangeEvent<HTMLFormElement>) {
               id="email"
               name="email"
               placeholder="email"
-              className="border-2 border-slate-700 rounded p-2"
+              className="p-2 border-2 rounded border-slate-700"
               value={usuarioLogin.email} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -60,12 +60,12 @@ function login(e: ChangeEvent<HTMLFormElement>) {
               id="senha"
               name="senha"
               placeholder="Senha"
-              className="border-2 border-slate-700 rounded p-2"
+              className="p-2 border-2 rounded border-slate-700"
               value={usuarioLogin.senha} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
-          <button  type='submit' className="rounded bg-indigo-400 hover:bg-indigo-900 text-white w-1/2 py-2 flex justify-center">
+          <button  type='submit' className="flex justify-center w-1/2 py-2 text-white bg-indigo-400 rounded hover:bg-indigo-900">
            {isLoading ? <RotatingLines
             strokeColor="white"
             strokeWidth="5"
@@ -76,7 +76,7 @@ function login(e: ChangeEvent<HTMLFormElement>) {
             <span>Entrar</span>}
           </button>
 
-          <hr className="border-slate-800 w-full" />
+          <hr className="w-full border-slate-800" />
 
           <p>
             Ainda não tem uma conta?{' '}
@@ -85,7 +85,7 @@ function login(e: ChangeEvent<HTMLFormElement>) {
             </Link>
           </p>
         </form>
-        <div className="fundoLogin hidden lg:block"></div>
+        <div className="hidden fundoLogin lg:block"></div>
       </div>
     </>
   );
